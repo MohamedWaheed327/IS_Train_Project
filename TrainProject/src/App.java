@@ -5,7 +5,9 @@ public class App {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         Statement st = con.createStatement();
-        st.execute(sql);
+        if (st.execute(sql)) {
+            ResultSet rs = st.executeQuery(sql);
+        }
         con.close();
     }
 
