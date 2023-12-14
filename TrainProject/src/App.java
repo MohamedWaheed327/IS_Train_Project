@@ -10,7 +10,6 @@ public class App {
         ResultSet rs = st.executeQuery(Query);
         rs.next();
         System.out.println(rs.getString(1));
-        
         con.close();
     }
 }
