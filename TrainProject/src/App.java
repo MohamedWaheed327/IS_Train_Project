@@ -10,6 +10,7 @@ public class App {
         while (rs.next()) {
             System.out.println(rs.next());
         }
+        
         con.close();
     }
 }
