@@ -1,7 +1,7 @@
 import java.sql.*;
 
 public class App {
-    public static void solve(String sql) throws Exception {
+    public static void query(String sql) throws Exception {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         Statement st = con.createStatement();
@@ -12,6 +12,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        solve("select tname from test where id = 1");
+        query("select tname from test where id = 1");
+        query("select tname from test where id = 2");
     }
 }
