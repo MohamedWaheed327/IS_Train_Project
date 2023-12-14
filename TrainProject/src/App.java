@@ -9,6 +9,7 @@ public class App {
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(Query);
         rs.next();
+        
         System.out.println(rs.getString(1));
         con.close();
     }
