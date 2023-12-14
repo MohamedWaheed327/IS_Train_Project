@@ -6,8 +6,8 @@ public class App {
         Connection con = DriverManager.getConnection(url, "root", "root");
 
         String sql = "select tname from test where id = 1";
-        PreparedStatement st = con.prepareStatement(sql);
-        ResultSet rs = st.executeQuery();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sql);
         rs.next();
         System.out.println(rs.getString(1));
 
