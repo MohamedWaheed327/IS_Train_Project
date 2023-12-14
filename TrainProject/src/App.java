@@ -6,13 +6,10 @@ public class App {
         Connection con = DriverManager.getConnection(url, "root", "root");
         Statement st = con.createStatement();
         st.execute(sql);
-        // rs.next();
-        // System.out.println(rs.getString(1));
         con.close();
     }
 
     public static void main(String[] args) throws Exception {
-        query("drop database fathy");
-        query("select tname from test where id = 2");
+
     }
 }
