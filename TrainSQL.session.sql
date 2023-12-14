@@ -2,4 +2,4 @@
 -- INSERT INTO test VALUES(1, "ahmed");
 -- INSERT INTO test VALUES(2, "mohamed");
 -- DROP TABLE test;
-SELECT * FROM test;
+-- SELECT * FROM test;
