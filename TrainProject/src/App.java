@@ -7,11 +7,19 @@ public class App {
         Statement st = con.createStatement();
         if (st.execute(sql)) {
             ResultSet rs = st.executeQuery(sql);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int N = rsmd.getColumnCount();
+            while (rs.next()) {
+                for (int i = 1; i <= N; i++) {
+                    System.out.print(rs.getString(i) + " ");
+                }
+                System.out.println("");
+            }
         }
         con.close();
     }
 
     public static void main(String[] args) throws Exception {
-        
+        query("SELECT * FROM test");
     }
 }
