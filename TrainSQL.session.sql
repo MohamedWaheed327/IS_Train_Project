@@ -16,7 +16,6 @@
 -- CREATE TABLE train(
 --     train_id int primary key not null,
 --     seats_number int not null,
---     travel_line varchar(100),
 --     start_station varchar(100),
 --     end_station varchar(100),
 --     occupied_seats int not null,
@@ -24,7 +23,7 @@
 -- );
 
 -- CREATE TABLE seat(
---     seat_num int,
+--     seat_id int,
 --     train_id int not NULL REFERENCES train(train_id),
 --     visited BOOLEAN
 -- );
@@ -34,10 +33,10 @@
 --     train_id int not null references train(train_id),
 --     start_station varchar(100) not null,
 --     end_station varchar(100) not null,
---     start_time varchar(100),
---     expected_end_time varchar(100),
+--     start_time TIMESTAMP,
+--     expected_end_time TIMESTAMP,
 --     cost int not null,
---     train_seat_number int not null
+--     seat_id int not null REFERENCES seat(seat_id)
 -- );
 
 -- CREATE TABLE booked_tickets(
