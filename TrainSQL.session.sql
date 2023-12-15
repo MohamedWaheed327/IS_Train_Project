@@ -1,7 +1,7 @@
 
 -- CREATE TABLE user_db(
---     national_id int primary key not null, 
---     user_name_ varchar(100) not null, 
+--     national_id int  not null, 
+--     user_name_ varchar(100) primary key not null, 
 --     user_password varchar(100) not null,
 --     user_email varchar(100) not null,
 --     user_phone varchar(100) not null,
@@ -41,5 +41,5 @@
 
 -- CREATE TABLE booked_tickets(
 --     ticket_id int not null references ticket(ticket_id),
---     national_id int not null references user_db(national_id)
+--     user_name_ int not null references user_db(user_name_)
 -- );
