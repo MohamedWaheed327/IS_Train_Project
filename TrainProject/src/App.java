@@ -9,6 +9,12 @@ public class App {
             ResultSet rs = st.executeQuery(sql);
             ResultSetMetaData rsmd = rs.getMetaData();
             int N = rsmd.getColumnCount();
+
+            for (int i = 1; i <= N; i++) {
+                System.out.print(rsmd.getColumnName(i) + " ");
+            }
+            System.out.println("");
+
             while (rs.next()) {
                 for (int i = 1; i <= N; i++) {
                     System.out.print(rs.getString(i) + " ");
