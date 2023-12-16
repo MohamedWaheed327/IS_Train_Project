@@ -80,7 +80,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        add_train("6", "10", "a", "b");
+        // add_train("6", "10", "a", "b");
         query("select * from user_db");
         query("select * from admin_db");
         query("select * from train");
