@@ -26,8 +26,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        // query("insert into admin_db values(\"mohamed waheed\", \"mw123\")");
-        query("select * from admin_db");
+        
     }
 
 }
