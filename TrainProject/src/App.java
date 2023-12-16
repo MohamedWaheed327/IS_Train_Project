@@ -25,11 +25,11 @@ public class App {
         con.close();
     }
 
-    public static boolean not_unique(String column, String table) throws Exception {
+    public static boolean not_unique(String column, String table, String value) throws Exception {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("select " + column + " from " + table);
+        ResultSet rs = st.executeQuery("select * from " + table + " where " + column + " = " + value);
         boolean x = rs.next();
         con.close();
         return x;
@@ -37,7 +37,7 @@ public class App {
 
     public static void add_user(String national_id, String user_name_, String user_password, String user_email,
             String user_phone, String gender) throws Exception {
-        if (not_unique(user_name_, "user_db")) {
+        if (not_unique("user_name_", "user_db", user_name_)) {
             System.out.println("this user name is already taken");
             return;
         }
@@ -52,7 +52,7 @@ public class App {
     }
 
     public static void add_admin(String user_name_, String user_password) throws Exception {
-        if (not_unique(user_name_, "admin_db")) {
+        if (not_unique("user_name_", "admin_db", user_name_)) {
             System.out.println("this user name is already taken");
             return;
         }
@@ -63,7 +63,7 @@ public class App {
 
     public static void add_train(String train_id, String seats_number, String start_station, String end_station)
             throws Exception {
-        if (not_unique(train_id, "train")) {
+        if (not_unique("train_id", "train", train_id)) {
             System.out.println("this train is already added");
             return;
         }
@@ -80,7 +80,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        add_train("1", "10", "a", "b");
+        add_train("6", "10", "a", "b");
         query("select * from user_db");
         query("select * from admin_db");
         query("select * from train");
