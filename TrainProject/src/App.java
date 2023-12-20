@@ -103,7 +103,6 @@ public class App extends JFrame {
         cost = cost + ",";
         query("insert into ticket values(" + ticket_id + train_id + start_station +
                 end_station + start_time + expected_end_time + cost + seat_id + ")");
-
     }
 
     public static void book_ticket(String ticket_id, String user_name_) throws Exception {
@@ -157,5 +156,6 @@ public class App extends JFrame {
     public static void main(String[] args) throws Exception {
         App x = new App();
         x.FirstFrame();
+        // '2023-11-16 18:06:46'
     }
 }
