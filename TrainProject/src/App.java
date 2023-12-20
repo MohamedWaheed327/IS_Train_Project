@@ -102,8 +102,8 @@ public class App extends JFrame {
         expected_end_time = "\"" + expected_end_time + "\",";
         cost = cost + ",";
         query("insert into ticket values(" + ticket_id + train_id + start_station +
-                end_station + start_time
-                + expected_end_time + cost + seat_id + ")");
+                end_station + start_time + expected_end_time + cost + seat_id + ")");
+
     }
 
     public static void book_ticket(String ticket_id, String user_name_) throws Exception {
