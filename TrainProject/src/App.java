@@ -824,7 +824,7 @@ public class App extends JFrame {
         JPanel showPanel = new JPanel();
         showPanel.setLayout(new GridLayout(2, 1, 30, 30));
         showPanel.setOpaque(false);
-        JButton show = new JButton("Show");
+        JButton show = new JButton("remove");
         show.setFont(mainFont);
         show.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -1006,7 +1006,7 @@ public class App extends JFrame {
     }
 
     public static void main(String[] args) throws Exception {
-        // App x = new App();
-        // x.FirstFrame();
+        App x = new App();
+        x.FirstFrame();
     }
 }
