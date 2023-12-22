@@ -215,6 +215,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -302,6 +303,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -393,6 +395,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -521,6 +524,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -578,6 +582,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -640,6 +645,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -777,6 +783,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -863,6 +870,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -1002,6 +1010,7 @@ public class App extends JFrame {
         setSize(500, 600);
         setMinimumSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
