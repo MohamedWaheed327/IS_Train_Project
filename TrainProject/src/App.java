@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.time.LocalDate;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -942,8 +943,30 @@ public class App extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String from = tffrom.getText();
                 String to = tfto.getText();
+                String currentdate = LocalDate.now().toString();
                 try {
-                    // add_ticket(id, to, to, to, to, to, from, to);
+                    String sql = "";
+                    String url = "jdbc:mysql://localhost:3306/train";
+                    Connection con = DriverManager.getConnection(url, "root", "root");
+                    Statement st = con.createStatement();
+                    if (st.execute(sql)) {
+                        ResultSet rs = st.executeQuery(sql);
+                        ResultSetMetaData rsmd = rs.getMetaData();
+                        int N = rsmd.getColumnCount();
+
+                        for (int i = 1; i <= N; i++) {
+                            System.out.print(rsmd.getColumnName(i) + " ");
+                        }
+                        System.out.println("");
+
+                        while (rs.next()) {
+                            for (int i = 1; i <= N; i++) {
+                                System.out.print(rs.getString(i) + " ");
+                            }
+                            System.out.println("");
+                        }
+                    }
+                    con.close();
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -983,7 +1006,7 @@ public class App extends JFrame {
     }
 
     public static void main(String[] args) throws Exception {
-        App x = new App();
-        x.FirstFrame();
+        // App x = new App();
+        // x.FirstFrame();
     }
 }
