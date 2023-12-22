@@ -906,8 +906,20 @@ public class App extends JFrame {
         }
 
         // show panel
+        JLabel lbfrom = new JLabel("from:");
+        lbfrom.setFont(mainFont);
+
+        JTextField tffrom = new JTextField();
+        tffrom.setFont(mainFont);
+
+        JLabel lbto = new JLabel("to:");
+        lbto.setFont(mainFont);
+
+        JTextField tfto = new JTextField();
+        tfto.setFont(mainFont);
+
         JPanel showPanel = new JPanel();
-        showPanel.setLayout(new GridLayout(2, 1, 30, 30));
+        showPanel.setLayout(new GridLayout(3, 2, 30, 30));
         showPanel.setOpaque(false);
         show.setFont(mainFont);
         show.addActionListener(new ActionListener() {
@@ -916,33 +928,28 @@ public class App extends JFrame {
             }
         });
         showPanel.add(show);
+        showPanel.add(new JLabel(""));
+        showPanel.add(lbfrom);
+        showPanel.add(tffrom);
+        showPanel.add(lbto);
+        showPanel.add(tfto);
         showPanel.setComponentPopupMenu(popupMenu);
-        // add ticket panel
-        JLabel from = new JLabel("from");
-        from.setFont(mainFont);
 
-        JTextField tffrom = new JTextField();
-        tffrom.setFont(mainFont);
-
-        JLabel to = new JLabel("from");
-        to.setFont(mainFont);
-
-        JTextField tfto = new JTextField();
-        tfto.setFont(mainFont);
-
+        // btn panel
         JButton addticket = new JButton("add tickets");
         addticket.setFont(mainFont);
         addticket.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                String from = tffrom.getText();
+                String to = tfto.getText();
+                try {
+                    // add_ticket(id, to, to, to, to, to, from, to);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
         });
 
-        JPanel fromto = new JPanel();
-        fromto.setLayout(new GridLayout(3, 2, 30, 30));
-        fromto.setOpaque(false);
-
-        // btn panel
         JButton back = new JButton("back");
         back.setFont(mainFont);
         back.addActionListener(new ActionListener() {
@@ -954,8 +961,9 @@ public class App extends JFrame {
         });
 
         JPanel btnpanel = new JPanel();
-        btnpanel.setLayout(new GridLayout(2, 1, 30, 30));
+        btnpanel.setLayout(new GridLayout(1, 2, 30, 30));
         btnpanel.setOpaque(false);
+        btnpanel.add(addticket);
         btnpanel.add(back);
 
         // main panel
