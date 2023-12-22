@@ -581,9 +581,6 @@ public class App extends JFrame {
     }
 
     public void adminDashboardFrame() {
-        // welcome
-        JPanel formPanel = new JPanel();
-
         // btn panel
         JButton addtrain = new JButton("Add a train");
         addtrain.setFont(mainFont);
@@ -872,7 +869,7 @@ public class App extends JFrame {
 
     public void addTicketFrame() {
         // popup menu
-
+        JButton show = new JButton("choose a train");
         JPopupMenu popupMenu = new JPopupMenu();
         try {
             String url = "jdbc:mysql://localhost:3306/train";
@@ -895,7 +892,7 @@ public class App extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         try {
                             id = x;
-                            JOptionPane.showMessageDialog(null, "train with ID" + id + " is chosen");
+                            show.setText("train" + id);
                         } catch (Exception e1) {
                             e1.printStackTrace();
                         }
@@ -912,7 +909,6 @@ public class App extends JFrame {
         JPanel showPanel = new JPanel();
         showPanel.setLayout(new GridLayout(2, 1, 30, 30));
         showPanel.setOpaque(false);
-        JButton show = new JButton("choose a train");
         show.setFont(mainFont);
         show.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -921,6 +917,30 @@ public class App extends JFrame {
         });
         showPanel.add(show);
         showPanel.setComponentPopupMenu(popupMenu);
+        // add ticket panel
+        JLabel from = new JLabel("from");
+        from.setFont(mainFont);
+
+        JTextField tffrom = new JTextField();
+        tffrom.setFont(mainFont);
+
+        JLabel to = new JLabel("from");
+        to.setFont(mainFont);
+
+        JTextField tfto = new JTextField();
+        tfto.setFont(mainFont);
+
+        JButton addticket = new JButton("add tickets");
+        addticket.setFont(mainFont);
+        addticket.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        JPanel fromto = new JPanel();
+        fromto.setLayout(new GridLayout(3, 2, 30, 30));
+        fromto.setOpaque(false);
 
         // btn panel
         JButton back = new JButton("back");
