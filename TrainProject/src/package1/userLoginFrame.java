@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class userLoginFrame extends JFrame{
+public class userLoginFrame extends JFrame {
     Font mainFont = new Font("Segoe print", Font.BOLD, 15);
 
     public void userLoginFrame() {
@@ -43,7 +43,7 @@ public class userLoginFrame extends JFrame{
                 try {
                     if (is_valid_user.is_valid_user(user_name_, user_password)) {
                         setVisible(false);
-                        App x = new App();
+                        userDashboardFrame x = new userDashboardFrame();
                         x.curUser = user_name_;
                         x.userDashboardFrame();
                     } else {
