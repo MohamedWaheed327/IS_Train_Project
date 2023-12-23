@@ -44,13 +44,13 @@ public class adminLoginFrame extends JFrame {
                 String user_password = tfpassword.getText();
                 if (user_name_.isEmpty() && user_password.isEmpty()) {
                     setVisible(false);
-                    App x = new App();
+                    adminDashboardFrame x = new adminDashboardFrame();
                     x.adminDashboardFrame();
                 } else {
                     try {
                         if (is_valid_admin.is_valid_admin(user_name_, user_password)) {
                             setVisible(false);
-                            App x = new App();
+                            adminDashboardFrame x = new adminDashboardFrame();
                             x.adminDashboardFrame();
                         } else {
                             invalid.setText("invalid user name or password");
