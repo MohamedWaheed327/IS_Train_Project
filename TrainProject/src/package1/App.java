@@ -1,15 +1,5 @@
 package package1;
 
-public class App {
-    public static void main(String[] args) {
-        FirstFrame x = new FirstFrame();
-        x.FirstFrame();
-    }
-}
-/*
-
-package package1;
-
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -22,9 +12,9 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     public void start(Stage primaryStage) {
-        Parent root;
+
         try {
-            root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("test.fxml"));
             Scene scene = new Scene(root);
 
             primaryStage.setTitle("Hello World!");
@@ -32,12 +22,11 @@ public class App extends Application {
             primaryStage.show();
         } catch (IOException e) {
         }
+        FirstFrame x = new FirstFrame();
+        x.FirstFrame();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 }
-
-
- */
