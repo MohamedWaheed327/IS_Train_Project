@@ -69,9 +69,6 @@ public class userLoginFrame extends JFrame {
         back.setFont(mainFont);
         back.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                FirstFrame x = new FirstFrame();
-                x.FirstFrame();
             }
         });
 
@@ -97,5 +94,9 @@ public class userLoginFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        
     }
 }
