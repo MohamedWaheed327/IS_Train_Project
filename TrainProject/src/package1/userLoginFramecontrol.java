@@ -75,7 +75,7 @@ public class userLoginFramecontrol {
                 clear.clear();
                 variables.openStages.add(primaryStage);
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("userDashboardtFrame.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml"));
                     Scene scene = new Scene(root);
                     primaryStage.setScene(scene);
                 } catch (IOException e) {
