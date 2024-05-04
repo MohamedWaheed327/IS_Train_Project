@@ -64,8 +64,8 @@ public class createaccountFramecontrol {
             gender = "male";
         }
 
-        if (user_name_.isEmpty() || user_password.isEmpty() || user_email.isEmpty() || user_phone.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "please fill all the fields");
+        if (user_name_.isEmpty() || user_password.isEmpty() || user_email.isEmpty() || user_phone.isEmpty() || national_id.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "please fill out all the fields");
         } else if (!not_unique.fun("user_name_", "user_db", "\"" + user_name_ + "\"")) {
             add_user.fun(national_id, user_name_, user_password, user_email, user_phone, gender);
             JOptionPane.showMessageDialog(null, "Account created successfully");
