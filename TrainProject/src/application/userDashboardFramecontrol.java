@@ -5,8 +5,7 @@ import functions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -26,31 +25,23 @@ public class userDashboardFramecontrol {
     private Label lbwelcome;
 
     @FXML
-    void backE(ActionEvent event) {
+    void backE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FirstFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
 
     @FXML
-    void bookticketE(ActionEvent event) {
+    void bookticketE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("bookTicketFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("bookTicketFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
