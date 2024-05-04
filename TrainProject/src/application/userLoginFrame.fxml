@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.userLoginFramecontrol">
+   <children>
+      <ImageView fitHeight="441.0" fitWidth="446.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Mohammed%20Waheed/Desktop/IS_Train_Project/TrainProject/res/train4.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="109.0" layoutY="192.0" text="user name:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="tfusername" layoutX="225.0" layoutY="189.0" />
+      <Label layoutX="112.0" layoutY="231.0" text="password:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="tfpassword" layoutX="225.0" layoutY="228.0" />
+      <Button fx:id="signin" layoutX="70.0" layoutY="318.0" mnemonicParsing="false" onAction="#signinE" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #006666;" text="sign in" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="createaccount" layoutX="254.0" layoutY="318.0" mnemonicParsing="false" onAction="#createaccountE" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #006666;" text="create new account" textFill="#f4f2f2">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="back" layoutX="355.0" layoutY="387.0" mnemonicParsing="false" onAction="#backE" style="-fx-background-color: #006666;" text="back" />
+   </children>
+</AnchorPane>

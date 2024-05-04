@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.createaccountFramecontrol">
+   <children>
+      <ImageView fitHeight="481.0" fitWidth="386.0" pickOnBounds="true">
+         <image>
+            <Image url="file:/C:/Users/Mohammed%20Waheed/Desktop/IS_Train_Project/TrainProject/res/trainid.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="42.0" layoutY="44.0" text="national id:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="tfnationalid" layoutX="177.0" layoutY="41.0" />
+      <Button fx:id="signup" layoutX="126.0" layoutY="316.0" mnemonicParsing="false" onAction="#signupE" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #006666;" text="sign up" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Button>
+      <RadioButton fx:id="male" layoutX="139.0" layoutY="243.0" mnemonicParsing="false" text="male" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="group1" />
+         </toggleGroup>
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="female" layoutX="244.0" layoutY="243.0" mnemonicParsing="false" text="female" textFill="WHITE" toggleGroup="$group1">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></RadioButton>
+      <TextField fx:id="tfusername" layoutX="178.0" layoutY="83.0" />
+      <TextField fx:id="tfuseremail" layoutX="178.0" layoutY="121.0" />
+      <TextField fx:id="tfuserphone" layoutX="180.0" layoutY="197.0" />
+      <Label layoutX="44.0" layoutY="86.0" text="user name:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="44.0" layoutY="124.0" text="user email:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="48.0" layoutY="200.0" text="user phone:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <Button fx:id="back" layoutX="13.0" layoutY="427.0" mnemonicParsing="false" onAction="#backE" prefHeight="33.0" prefWidth="86.0" style="-fx-background-color: #006666;" text="back" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Button>
+      <TextField fx:id="tfpassword" layoutX="180.0" layoutY="158.0" />
+      <Label layoutX="47.0" layoutY="161.0" text="password:" textFill="#fcfcfc">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="48.0" layoutY="245.0" text="gender:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

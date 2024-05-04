@@ -43,6 +43,3 @@
 --     ticket_id int not null references ticket(ticket_id),
 --     user_name_ int not null references user_db(user_name_)
 -- );
-
-select * FROM user_db;
-SELECT * FROM admin_db;
