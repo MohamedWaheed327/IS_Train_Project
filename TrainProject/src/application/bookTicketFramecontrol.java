@@ -41,16 +41,12 @@ public class bookTicketFramecontrol {
     private TextField time;
 
     @FXML
-    void backE(ActionEvent event) {
+    void backE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
