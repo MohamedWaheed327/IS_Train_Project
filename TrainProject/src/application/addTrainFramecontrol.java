@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.HeadlessException;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
@@ -7,7 +8,6 @@ import functions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -34,33 +34,27 @@ public class addTrainFramecontrol {
     private TextField trainid;
 
     @FXML
-    void addtrainE(ActionEvent event) {
+    void addtrainE(ActionEvent event) throws HeadlessException, Exception {
         String train_id = trainid.getText();
         String seat_number = seatnumber.getText();
         String start_station = startstation.getText();
         String end_station = endstation.getText();
-        try {
-            if (not_unique.fun("train_id", "train", train_id)) {
-                JOptionPane.showMessageDialog(null, "Train already exists!!");
-            } else {
-                add_train.fun(train_id, seat_number, start_station, end_station);
-                JOptionPane.showMessageDialog(null, "Train added successfully!!");
-            }
-        } catch (Exception e1) {
-            e1.printStackTrace();
+
+        if (not_unique.fun("train_id", "train", train_id)) {
+            JOptionPane.showMessageDialog(null, "Train already exists!!");
+        } else {
+            add_train.fun(train_id, seat_number, start_station, end_station);
+            JOptionPane.showMessageDialog(null, "Train added successfully!!");
         }
     }
 
     @FXML
-    void backE(ActionEvent event) {
+    void backE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
         clear.fun();
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        variables.openStages.add(primaryStage);
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
