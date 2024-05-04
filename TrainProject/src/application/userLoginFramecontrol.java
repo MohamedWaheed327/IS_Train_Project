@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.HeadlessException;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
@@ -7,7 +8,6 @@ import functions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -31,62 +31,47 @@ public class userLoginFramecontrol {
     private TextField tfusername;
 
     @FXML
-    void backE(ActionEvent event) {
+    void backE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FirstFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
 
     @FXML
-    void createaccountE(ActionEvent event) {
+    void createaccountE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("createaccountFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("createaccountFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
 
     @FXML
-    void signinE(ActionEvent event) {
+    void signinE(ActionEvent event) throws HeadlessException, Exception {
         String user_name_ = tfusername.getText();
         String user_password = tfpassword.getText();
-        try {
-            if (user_name_.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "please enter the user name");
-            } else if (user_password.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "please enter the password");
-            } else if (is_valid_user.fun(user_name_, user_password)) {
-                variables.curUser = user_name_;
-                Stage primaryStage = new Stage();
-                clear.fun();
-                variables.openStages.add(primaryStage);
-                try {
-                    Parent root = FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml"));
-                    Scene scene = new Scene(root);
-                    primaryStage.setScene(scene);
-                } catch (IOException e) {
-                }
-                primaryStage.setTitle("Your Train App");
-                primaryStage.show();
-            } else {
-                JOptionPane.showMessageDialog(null, "invalid user name or password");
-            }
-        } catch (Exception e1) {
-            e1.printStackTrace();
+
+        if (user_name_.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "please enter the user name");
+        } else if (user_password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "please enter the password");
+        } else if (is_valid_user.fun(user_name_, user_password)) {
+            variables.curUser = user_name_;
+            Stage primaryStage = new Stage();
+            clear.fun();
+            variables.openStages.add(primaryStage);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml")));
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Your Train App");
+            primaryStage.show();
+        } else {
+            JOptionPane.showMessageDialog(null, "invalid user name or password");
         }
     }
 
