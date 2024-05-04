@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.IOException;
 import functions.*;
 import javafx.event.ActionEvent;
@@ -22,12 +21,8 @@ public class FirstFramecontrol {
         Stage primaryStage = new Stage();
         clear.clear();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("adminLoginFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("adminLoginFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
@@ -37,12 +32,8 @@ public class FirstFramecontrol {
         Stage primaryStage = new Stage();
         clear.clear();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("userLoginFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("userLoginFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
