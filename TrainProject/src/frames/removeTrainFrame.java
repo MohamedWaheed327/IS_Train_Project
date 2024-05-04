@@ -1,4 +1,5 @@
 package frames;
+
 import functions.*;
 
 import java.awt.*;
@@ -34,7 +35,7 @@ public class removeTrainFrame extends JFrame {
                 menuItem.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         try {
-                            remove_train.remove_train(x);
+                            remove_train.fun(x);
                         } catch (Exception e1) {
                             e1.printStackTrace();
                         }

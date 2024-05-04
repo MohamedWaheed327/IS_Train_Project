@@ -1,4 +1,5 @@
 package frames;
+
 import functions.*;
 
 import java.awt.*;
@@ -42,7 +43,7 @@ public class userLoginFrame extends JFrame {
                 String user_name_ = tfusername.getText();
                 String user_password = tfpassword.getText();
                 try {
-                    if (is_valid_user.is_valid_user(user_name_, user_password)) {
+                    if (is_valid_user.fun(user_name_, user_password)) {
                         setVisible(false);
                         userDashboardFrame x = new userDashboardFrame();
                         x.curUser = user_name_;
@@ -98,6 +99,6 @@ public class userLoginFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        
+
     }
 }

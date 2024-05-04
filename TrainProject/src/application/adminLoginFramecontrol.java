@@ -29,7 +29,7 @@ public class adminLoginFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
@@ -50,9 +50,9 @@ public class adminLoginFramecontrol {
                 JOptionPane.showMessageDialog(null, "please enter a user name");
             } else if (user_password.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "please enter a password");
-            } else if (is_valid_admin.is_valid_admin(user_name_, user_password)) {
+            } else if (is_valid_admin.fun(user_name_, user_password)) {
                 Stage primaryStage = new Stage();
-                clear.clear();
+                clear.fun();
                 variables.openStages.add(primaryStage);
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml"));

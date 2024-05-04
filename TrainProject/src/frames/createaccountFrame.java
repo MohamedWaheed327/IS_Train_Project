@@ -1,4 +1,5 @@
 package frames;
+
 import functions.*;
 
 import java.awt.*;
@@ -92,8 +93,8 @@ public class createaccountFrame extends JFrame {
                 }
 
                 try {
-                    if (!not_unique.not_unique("user_name_", "user_db", "\"" + user_name_ + "\"")) {
-                        add_user.add_user(national_id, user_name_, user_password, user_email, user_phone, gender);
+                    if (!not_unique.fun("user_name_", "user_db", "\"" + user_name_ + "\"")) {
+                        add_user.fun(national_id, user_name_, user_password, user_email, user_phone, gender);
                         invalid.setText("Account created successfully");
                     } else {
                         invalid.setText("This user name already exists");

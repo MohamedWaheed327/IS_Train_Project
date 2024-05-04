@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.IOException;
 import functions.*;
 import javafx.event.ActionEvent;
@@ -29,7 +28,7 @@ public class userDashboardFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
@@ -41,11 +40,10 @@ public class userDashboardFramecontrol {
         primaryStage.show();
     }
 
-
     @FXML
     void bookticketE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("bookTicketFrame.fxml"));

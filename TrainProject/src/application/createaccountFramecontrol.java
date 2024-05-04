@@ -42,22 +42,18 @@ public class createaccountFramecontrol {
     private TextField tfuserphone;
 
     @FXML
-    void backE(ActionEvent event) {
+    void backE(ActionEvent event) throws IOException {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-        } catch (IOException e) {
-        }
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FirstFrame.fxml")));
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
     }
 
     @FXML
-    void signupE(ActionEvent event) {
+    void signupE(ActionEvent event) throws Exception {
         String user_name_ = tfusername.getText();
         String user_password = tfpassword.getText();
         String user_phone = tfuserphone.getText();
@@ -68,17 +64,13 @@ public class createaccountFramecontrol {
             gender = "male";
         }
 
-        try {
-            if (user_name_.isEmpty() || user_password.isEmpty() || user_email.isEmpty() || user_phone.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "please fill all the fields");
-            } else if (!not_unique.not_unique("user_name_", "user_db", "\"" + user_name_ + "\"")) {
-                add_user.add_user(national_id, user_name_, user_password, user_email, user_phone, gender);
-                JOptionPane.showMessageDialog(null, "Account created successfully");
-            } else {
-                JOptionPane.showMessageDialog(null, "This user name already exists!!");
-            }
-        } catch (Exception e1) {
-            e1.printStackTrace();
+        if (user_name_.isEmpty() || user_password.isEmpty() || user_email.isEmpty() || user_phone.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "please fill all the fields");
+        } else if (!not_unique.fun("user_name_", "user_db", "\"" + user_name_ + "\"")) {
+            add_user.fun(national_id, user_name_, user_password, user_email, user_phone, gender);
+            JOptionPane.showMessageDialog(null, "Account created successfully");
+        } else {
+            JOptionPane.showMessageDialog(null, "This user name already exists!!");
         }
     }
 

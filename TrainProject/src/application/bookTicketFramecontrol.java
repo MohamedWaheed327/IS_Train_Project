@@ -43,7 +43,7 @@ public class bookTicketFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml"));
@@ -132,8 +132,8 @@ public class bookTicketFramecontrol {
             visited += x.charAt(i);
             i++;
         }
-        query.query("insert into booked_tickets values("+seat_id+train_id+ ",\""+ variables.curUser+"\")");
-        query.query("update seat set visited = true where seat_id = " + seat_id);
+        query.fun("insert into booked_tickets values(" + seat_id + train_id + ",\"" + variables.curUser + "\")");
+        query.fun("update seat set visited = true where seat_id = " + seat_id);
     }
 
 }

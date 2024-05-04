@@ -32,7 +32,7 @@ public class removeTrainFramecontrol {
             i++;
         }
         try {
-            remove_train.remove_train(x);
+            remove_train.fun(x);
         } catch (Exception e) {
         }
         remove.setValue("");
@@ -42,7 +42,7 @@ public class removeTrainFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml"));

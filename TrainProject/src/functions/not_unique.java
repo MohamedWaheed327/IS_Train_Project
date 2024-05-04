@@ -3,7 +3,7 @@ package functions;
 import java.sql.*;
 
 public class not_unique {
-    public static boolean not_unique(String column, String table, String value) throws Exception {
+    public static boolean fun(String column, String table, String value) throws Exception {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         Statement st = con.createStatement();

@@ -55,7 +55,7 @@ public class addTicketFramecontrol {
             ResultSet rs = st.executeQuery("select * from train where train_id = " + train_id);
             rs.next();
             for (int i = 1; i <= Integer.valueOf(rs.getString(2)); i++) {
-                add_ticket.add_ticket(Integer.toString(i) + train_id, train_id,
+                add_ticket.fun(Integer.toString(i) + train_id, train_id,
                         rs.getString(3), rs.getString(4), start_time, end_time, cost_, Integer.toString(i));
             }
             JOptionPane.showMessageDialog(null, "tickets added successfully");
@@ -67,7 +67,7 @@ public class addTicketFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml"));

@@ -12,11 +12,11 @@ public class add_ticket {
      * @param seat_id
      * @throws Exception
      */
-    public static void add_ticket(String ticket_id, String train_id, String start_station, String end_station,
+    public static void fun(String ticket_id, String train_id, String start_station, String end_station,
             String start_time, String expected_end_time, String cost, String seat_id)
             throws Exception {
 
-        if (not_unique.not_unique("ticket_id", "ticket", ticket_id)) {
+        if (not_unique.fun("ticket_id", "ticket", ticket_id)) {
             return;
         }
 
@@ -27,7 +27,7 @@ public class add_ticket {
         start_time = start_time + ",";
         expected_end_time = expected_end_time + ",";
         cost = cost + ",";
-        query.query("insert into ticket values(" + ticket_id + train_id + start_station +
+        query.fun("insert into ticket values(" + ticket_id + train_id + start_station +
                 end_station + start_time + expected_end_time + cost + seat_id + ")");
     }
 }

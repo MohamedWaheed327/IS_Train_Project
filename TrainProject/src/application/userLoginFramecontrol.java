@@ -33,7 +33,7 @@ public class userLoginFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
@@ -48,7 +48,7 @@ public class userLoginFramecontrol {
     @FXML
     void createaccountE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("createaccountFrame.fxml"));
@@ -69,10 +69,10 @@ public class userLoginFramecontrol {
                 JOptionPane.showMessageDialog(null, "please enter the user name");
             } else if (user_password.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "please enter the password");
-            } else if (is_valid_user.is_valid_user(user_name_, user_password)) {
+            } else if (is_valid_user.fun(user_name_, user_password)) {
                 variables.curUser = user_name_;
                 Stage primaryStage = new Stage();
-                clear.clear();
+                clear.fun();
                 variables.openStages.add(primaryStage);
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml"));

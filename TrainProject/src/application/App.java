@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FirstFrame.fxml")));
         primaryStage.setScene(scene);

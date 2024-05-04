@@ -1,12 +1,12 @@
 package functions;
 
 public class clearAll {
-    public static void clearAll() throws Exception {
-        query.query("delete from user_db");
-        query.query("delete from admin_db");
-        query.query("delete from train");
-        query.query("delete from seat");
-        query.query("delete from ticket");
-        query.query("delete from booked_tickets");
+    public static void fun() throws Exception {
+        query.fun("delete from user_db");
+        query.fun("delete from admin_db");
+        query.fun("delete from train");
+        query.fun("delete from seat");
+        query.fun("delete from ticket");
+        query.fun("delete from booked_tickets");
     }
 }

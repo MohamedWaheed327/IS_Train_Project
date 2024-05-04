@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.IOException;
 import functions.*;
 import javafx.event.ActionEvent;
@@ -28,7 +27,7 @@ public class adminDashboardFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FirstFrame.fxml"));
@@ -43,7 +42,7 @@ public class adminDashboardFramecontrol {
     @FXML
     void addticketsE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("addTicketFrame.fxml"));
@@ -58,7 +57,7 @@ public class adminDashboardFramecontrol {
     @FXML
     void addtrainE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("addTrainFrame.fxml"));
@@ -73,7 +72,7 @@ public class adminDashboardFramecontrol {
     @FXML
     void removetrainE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         variables.openStages.add(primaryStage);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("removeTrainFrame.fxml"));

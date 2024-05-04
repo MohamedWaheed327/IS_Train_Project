@@ -1,12 +1,12 @@
 package functions;
 
 public class displayAll {
-    public static void displayAll() throws Exception {
-        query.query("select * from user_db");
-        query.query("select * from admin_db");
-        query.query("select * from train");
-        query.query("select * from seat");
-        query.query("select * from ticket");
-        query.query("select * from booked_tickets");
+    public static void fun() throws Exception {
+        query.fun("select * from user_db");
+        query.fun("select * from admin_db");
+        query.fun("select * from train");
+        query.fun("select * from seat");
+        query.fun("select * from ticket");
+        query.fun("select * from booked_tickets");
     }
 }

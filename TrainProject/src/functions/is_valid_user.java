@@ -3,7 +3,7 @@ package functions;
 import java.sql.*;
 
 public class is_valid_user {
-    public static boolean is_valid_user(String username, String password) throws Exception {
+    public static boolean fun(String username, String password) throws Exception {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         Statement st = con.createStatement();

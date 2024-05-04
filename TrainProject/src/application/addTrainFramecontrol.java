@@ -40,10 +40,10 @@ public class addTrainFramecontrol {
         String start_station = startstation.getText();
         String end_station = endstation.getText();
         try {
-            if (not_unique.not_unique("train_id", "train", train_id)) {
+            if (not_unique.fun("train_id", "train", train_id)) {
                 JOptionPane.showMessageDialog(null, "Train already exists!!");
             } else {
-                add_train.add_train(train_id, seat_number, start_station, end_station);
+                add_train.fun(train_id, seat_number, start_station, end_station);
                 JOptionPane.showMessageDialog(null, "Train added successfully!!");
             }
         } catch (Exception e1) {
@@ -54,7 +54,7 @@ public class addTrainFramecontrol {
     @FXML
     void backE(ActionEvent event) {
         Stage primaryStage = new Stage();
-        clear.clear();
+        clear.fun();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml"));
             Scene scene = new Scene(root);
