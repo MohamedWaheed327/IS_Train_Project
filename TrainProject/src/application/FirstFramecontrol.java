@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class FirstFramecontrol {
-
     @FXML
     private Button signinasadmin;
 
