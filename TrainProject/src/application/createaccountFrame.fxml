@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="481.0" fitWidth="386.0" pickOnBounds="true">
          <image>
-            <Image url="file:/C:/Users/Mohammed%20Waheed/Desktop/IS_Train_Project/TrainProject/res/trainid.jpg" />
+            <Image url="file:D:\IS_Train_Project\TrainProject\res\trainid.jpg" />
          </image>
       </ImageView>
       <Label layoutX="42.0" layoutY="44.0" text="national id:" textFill="WHITE">

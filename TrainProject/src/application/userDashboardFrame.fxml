@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="408.0" fitWidth="432.0" pickOnBounds="true">
          <image>
-            <Image url="file:/C:/Users/Mohammed%20Waheed/Desktop/IS_Train_Project/TrainProject/res/train4.jpg" />
+            <Image url="file:D:\IS_Train_Project\TrainProject\res\train4.jpg" />
          </image>
       </ImageView>
       <Button fx:id="back" layoutX="148.0" layoutY="272.0" mnemonicParsing="false" onAction="#backE" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #006666;" text="back" textFill="WHITE">

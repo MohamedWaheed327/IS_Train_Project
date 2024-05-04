@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="470.0" styleClass=".bodybg" stylesheets="@../package2/FirstFrame.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FirstFramecontrol">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FirstFramecontrol">
    <children>
       <ImageView fitHeight="532.0" fitWidth="481.0" layoutX="-4.0" pickOnBounds="true">
          <image>
-            <Image url="file:/C:/Users/Mohammed%20Waheed/Desktop/IS_Train_Project/TrainProject/res/train2.jpg" />
+            <Image url="file:D:\IS_Train_Project\TrainProject\res\train2.jpg" />
          </image>
       </ImageView>
       <Label layoutX="51.0" layoutY="77.0" text="Welcome to Your Train App" textFill="#0088ff">

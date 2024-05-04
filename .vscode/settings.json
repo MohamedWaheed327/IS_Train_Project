@@ -9,7 +9,16 @@
         "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.media.jar",
         "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.swing.jar",
         "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.web.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar"
+        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar",
+        "mysql-connector-j-8.1.0.jar",
+        "javafx-sdk-21.0.1/lib/javafx.base.jar",
+        "javafx-sdk-21.0.1/lib/javafx.controls.jar",
+        "javafx-sdk-21.0.1/lib/javafx.fxml.jar",
+        "javafx-sdk-21.0.1/lib/javafx.graphics.jar",
+        "javafx-sdk-21.0.1/lib/javafx.media.jar",
+        "javafx-sdk-21.0.1/lib/javafx.swing.jar",
+        "javafx-sdk-21.0.1/lib/javafx.web.jar",
+        "javafx-sdk-21.0.1/lib/javafx-swt.jar"
     ],
     "sqltools.connections": [
         {

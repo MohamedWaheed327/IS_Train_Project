@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="441.0" fitWidth="446.0" layoutX="-1.0" pickOnBounds="true">
          <image>
-            <Image url="file:/C:/Users/Mohammed%20Waheed/Desktop/IS_Train_Project/TrainProject/res/train4.jpg" />
+            <Image url="file:D:\IS_Train_Project\TrainProject\res\train4.jpg" />
          </image>
       </ImageView>
       <Label layoutX="109.0" layoutY="192.0" text="user name:" textFill="WHITE">
