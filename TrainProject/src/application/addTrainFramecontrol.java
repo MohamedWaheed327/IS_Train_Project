@@ -40,6 +40,11 @@ public class addTrainFramecontrol {
         String start_station = startstation.getText();
         String end_station = endstation.getText();
 
+        if (train_id.length() == 0 || seat_number.length() == 0 || start_station.length() == 0 || end_station.length() == 0) {
+            JOptionPane.showMessageDialog(null, "fill out all fields.");
+            return;
+        }
+
         if (not_unique.fun("train_id", "train", train_id)) {
             JOptionPane.showMessageDialog(null, "Train already exists!!");
         } else {
