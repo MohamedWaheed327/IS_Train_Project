@@ -6,13 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "q",
-            "request": "launch",
-            "mainClass": "application.q",
-            "projectName": "IS_Train_Project_1f29a1c6"
-        },
-        {
-            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "application.App",
