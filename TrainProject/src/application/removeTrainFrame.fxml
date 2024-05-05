@@ -7,11 +7,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="350.0" style="-fx-background-color: #006666;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.removeTrainFramecontrol">
    <children>
-      <Button fx:id="removetrain" layoutX="216.0" layoutY="397.0" mnemonicParsing="false" onAction="#removetrainE" prefHeight="26.0" prefWidth="120.0" text="remove">
+      <Button fx:id="removetrain" layoutX="206.0" layoutY="397.0" mnemonicParsing="false" onAction="#removetrainE" prefHeight="26.0" prefWidth="120.0" text="remove">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="back" layoutX="37.0" layoutY="397.0" mnemonicParsing="false" onAction="#backE" prefHeight="26.0" prefWidth="120.0" text="back">
+      <Button fx:id="back" layoutX="27.0" layoutY="397.0" mnemonicParsing="false" onAction="#backE" prefHeight="26.0" prefWidth="120.0" text="back">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font></Button>

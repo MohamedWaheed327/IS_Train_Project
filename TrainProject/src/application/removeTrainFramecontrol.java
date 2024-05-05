@@ -43,23 +43,28 @@ public class removeTrainFramecontrol {
         primaryStage.show();
     }
 
+    public void initialize() throws Exception {
+        for (String s : get_train_list.fun()) {
+            remove.getItems().add(s);
+        }
+    }
+
     @FXML
     void removetrainE(ActionEvent event) throws Exception {
         if (variables.train_id.length() != 0) {
             remove_train.fun(variables.train_id);
-        }
+            variables.train_id = "";
+            JOptionPane.showMessageDialog(null, "Train " + variables.train_id + " removed successfully.");
 
-        JOptionPane.showMessageDialog(null, "Train " + variables.train_id + " removed successfully.");
-        Stage primaryStage = new Stage();
-        clear.fun();
-        variables.openStages.add(primaryStage);
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml")));
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Your Train App");
-        primaryStage.show();
+            Stage primaryStage = new Stage();
+            clear.fun();
+            variables.openStages.add(primaryStage);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml")));
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Your Train App");
+            primaryStage.show();
+        } else {
+            JOptionPane.showMessageDialog(null, "Choose a Train to remove.");
+        }
     }
 }
-
-// for (String s : get_train_list.fun()) {
-// remove.getItems().add(s);
-// }
