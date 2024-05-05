@@ -43,6 +43,13 @@ public class adminLoginFramecontrol {
         String user_password = passwordtf.getText();
 
         if (user_name_.isEmpty()) {
+            Stage primaryStage = new Stage();
+            clear.fun();
+            variables.openStages.add(primaryStage);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml")));
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Your Train App");
+            primaryStage.show();
             JOptionPane.showMessageDialog(null, "please enter a user name");
         } else if (user_password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "please enter a password");

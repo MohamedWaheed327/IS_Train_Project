@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+
 import functions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,7 +58,7 @@ public class adminDashboardFramecontrol {
     }
 
     @FXML
-    void removetrainE(ActionEvent event) throws IOException {
+    void removetrainE(ActionEvent event) throws Exception {
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);

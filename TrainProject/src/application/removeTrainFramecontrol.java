@@ -1,9 +1,6 @@
 package application;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import functions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,20 +19,14 @@ public class removeTrainFramecontrol {
     private Button removetrain;
 
     @FXML
-    void removeE(ActionEvent event) {
+    void removeE(ActionEvent event) throws Exception {
         String val = remove.getValue();
         String x = "";
         int i = 2;
         while (val.charAt(i) != ' ') {
-            x += val.charAt(i);
-            i++;
+            x += val.charAt(i++);
         }
-        try {
-            remove_train.fun(x);
-        } catch (Exception e) {
-        }
-        remove.setValue("");
-        remove.getItems().clear();
+        variables.train_id = x;
     }
 
     @FXML
@@ -50,30 +41,13 @@ public class removeTrainFramecontrol {
     }
 
     @FXML
-    void removetrainE(ActionEvent event) {
-        remove.setValue("Choose");
-        remove.getItems().clear();
-
-        try {
-            String url = "jdbc:mysql://localhost:3306/train";
-            Connection con = DriverManager.getConnection(url, "root", "root");
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from train");
-            int N = rs.getMetaData().getColumnCount();
-
-            while (rs.next()) {
-                String s = "ID";
-                for (int i = 1; i <= N; i++) {
-                    if (i > 1)
-                        s += " - ";
-                    s += rs.getString(i);
-                }
-                remove.getItems().add(s);
-            }
-            con.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+    void removetrainE(ActionEvent event) throws Exception {
+        if (variables.train_id.length() != 0) {
+            remove_train.fun(variables.train_id);
+        }
+        variables.TrainList = get_train_list.fun();
+        for (String s : variables.TrainList) {
+            remove.getItems().add(s);
         }
     }
-
 }
