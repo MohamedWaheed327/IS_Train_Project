@@ -13,14 +13,13 @@ public class add_ticket {
      * @throws Exception
      */
     public static void fun(String ticket_id, String train_id, String start_station, String end_station,
-            String start_time, String expected_end_time, String cost, String seat_id)
-            throws Exception {
+            String start_time, String expected_end_time, String cost, String seat_id) throws Exception {
 
-        if (not_unique.fun("ticket_id", "ticket", ticket_id)) {
+        if (not_unique.fun("ticket_id", "ticket", "\"" + ticket_id + "\"")) {
             return;
         }
 
-        ticket_id = ticket_id + ",";
+        ticket_id = "\"" + ticket_id + "\",";
         train_id = train_id + ",";
         start_station = "\"" + start_station + "\",";
         end_station = "\"" + end_station + "\",";

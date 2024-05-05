@@ -61,7 +61,6 @@ public class addTicketFramecontrol {
         String start_time = "'" + LocalDate.now().toString() + " " + starttime.getText() + ":00:00'";
         String end_time = "'" + LocalDate.now().toString() + " " + endtime.getText() + ":00:00'";
         String cost_ = cost.getText();
-
         String train_id = variables.train_id;
 
         String url = "jdbc:mysql://localhost:3306/train";
@@ -69,9 +68,11 @@ public class addTicketFramecontrol {
         java.sql.Statement st = con.createStatement();
         ResultSet rs = st.executeQuery("select * from train where train_id = " + train_id);
         rs.next();
+
         for (int i = 1; i <= Integer.valueOf(rs.getString(2)); i++) {
             add_ticket.fun(Integer.toString(i) + '#' + train_id, train_id,
-                    rs.getString(3), rs.getString(4), start_time, end_time, cost_, Integer.toString(i));
+                    rs.getString(3), rs.getString(4), start_time, end_time, cost_,
+                    Integer.toString(i));
         }
         con.close();
         JOptionPane.showMessageDialog(null, "tickets added successfully.");

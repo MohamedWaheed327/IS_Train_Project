@@ -28,8 +28,10 @@
 --     visited BOOLEAN
 -- );
 
+-- DROP TABLE ticket;
+
 -- CREATE TABLE ticket(
---     ticket_id int primary key not null,
+--     ticket_id varchar(100) primary key not null,
 --     train_id int not null references train(train_id),
 --     start_station varchar(100) not null,
 --     end_station varchar(100) not null,

@@ -40,6 +40,7 @@ public class removeTrainFramecontrol {
 
     @FXML
     void backE(ActionEvent event) throws IOException {
+        variables.train_id = "";
         Stage primaryStage = new Stage();
         clear.fun();
         variables.openStages.add(primaryStage);
