@@ -50,7 +50,7 @@ public class adminLoginFramecontrol {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Your Train App");
             primaryStage.show();
-            JOptionPane.showMessageDialog(null, "please enter a user name");
+            // JOptionPane.showMessageDialog(null, "please enter a user name");
         } else if (user_password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "please enter a password");
         } else if (is_valid_admin.fun(user_name_, user_password)) {

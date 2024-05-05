@@ -1,6 +1,9 @@
 package application;
 
 import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
 import functions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,9 +48,18 @@ public class removeTrainFramecontrol {
         if (variables.train_id.length() != 0) {
             remove_train.fun(variables.train_id);
         }
-        variables.TrainList = get_train_list.fun();
-        for (String s : variables.TrainList) {
-            remove.getItems().add(s);
-        }
+
+        JOptionPane.showMessageDialog(null, "Train " + variables.train_id + " removed successfully.");
+        Stage primaryStage = new Stage();
+        clear.fun();
+        variables.openStages.add(primaryStage);
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("adminDashboardFrame.fxml")));
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Your Train App");
+        primaryStage.show();
     }
 }
+
+// for (String s : get_train_list.fun()) {
+// remove.getItems().add(s);
+// }
