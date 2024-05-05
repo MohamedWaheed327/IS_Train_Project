@@ -52,7 +52,7 @@ public class bookTicketFramecontrol {
 
     @FXML
     void bookE(ActionEvent event) {
-        JOptionPane.showMessageDialog(null, "ticket booked successfully");
+        JOptionPane.showMessageDialog(null, "Ticket booked successfully.");
     }
 
     @FXML
@@ -127,6 +127,7 @@ public class bookTicketFramecontrol {
             visited += x.charAt(i);
             i++;
         }
+        System.out.println(visited);
         query.fun("insert into booked_tickets values(" + seat_id + train_id + ",\"" + variables.curUser + "\")");
         query.fun("update seat set visited = true where seat_id = " + seat_id);
     }

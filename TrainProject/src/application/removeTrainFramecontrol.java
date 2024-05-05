@@ -21,6 +21,12 @@ public class removeTrainFramecontrol {
     @FXML
     private Button removetrain;
 
+    public void initialize() throws Exception {
+        for (String s : get_train_list.fun()) {
+            remove.getItems().add(s);
+        }
+    }
+
     @FXML
     void removeE(ActionEvent event) throws Exception {
         String val = remove.getValue();
@@ -41,12 +47,6 @@ public class removeTrainFramecontrol {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Your Train App");
         primaryStage.show();
-    }
-
-    public void initialize() throws Exception {
-        for (String s : get_train_list.fun()) {
-            remove.getItems().add(s);
-        }
     }
 
     @FXML
