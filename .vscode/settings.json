@@ -1,25 +1,38 @@
 {
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\mysql-connector-j-8.1.0.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.base.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.controls.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.fxml.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.graphics.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.media.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.swing.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.web.jar",
-        "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar",
-        "mysql-connector-j-8.1.0.jar",
-        "javafx-sdk-21.0.1/lib/javafx.base.jar",
-        "javafx-sdk-21.0.1/lib/javafx.controls.jar",
-        "javafx-sdk-21.0.1/lib/javafx.fxml.jar",
-        "javafx-sdk-21.0.1/lib/javafx.graphics.jar",
-        "javafx-sdk-21.0.1/lib/javafx.media.jar",
-        "javafx-sdk-21.0.1/lib/javafx.swing.jar",
-        "javafx-sdk-21.0.1/lib/javafx.web.jar",
-        "javafx-sdk-21.0.1/lib/javafx-swt.jar"
-    ],
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\mysql-connector-j-8.1.0.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.base.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.controls.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.fxml.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.graphics.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.media.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.swing.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx.web.jar",
+            "c:\\Users\\Mohammed Waheed\\Desktop\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar",
+            "mysql-connector-j-8.1.0.jar",
+            "javafx-sdk-21.0.1/lib/javafx.base.jar",
+            "javafx-sdk-21.0.1/lib/javafx.controls.jar",
+            "javafx-sdk-21.0.1/lib/javafx.fxml.jar",
+            "javafx-sdk-21.0.1/lib/javafx.graphics.jar",
+            "javafx-sdk-21.0.1/lib/javafx.media.jar",
+            "javafx-sdk-21.0.1/lib/javafx.swing.jar",
+            "javafx-sdk-21.0.1/lib/javafx.web.jar",
+            "TrainProject/lib/mysql-connector-j-8.1.0.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.base.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.controls.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.fxml.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.graphics.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.media.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.swing.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx.web.jar",
+            "TrainProject/lib/javafx-sdk-21.0.1/lib/javafx-swt.jar"
+        ],
+        "exclude": [
+            "javafx-sdk-21.0.1/lib/javafx-swt.jar"
+        ]
+    },
     "sqltools.connections": [
         {
             "mysqlOptions": {

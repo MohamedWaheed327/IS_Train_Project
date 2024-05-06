@@ -67,8 +67,7 @@ public class bookTicketFramecontrol {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         java.sql.Statement st = con.createStatement();
-        ResultSet rs = st
-                .executeQuery("select * from seat where train_id = " + id + " and visited = false");
+        ResultSet rs = st.executeQuery("select * from seat where train_id = " + id + " and visited = false");
 
         int N = rs.getMetaData().getColumnCount();
         while (rs.next()) {
@@ -84,28 +83,25 @@ public class bookTicketFramecontrol {
     }
 
     @FXML
-    void searchE(ActionEvent event) {
+    void searchE(ActionEvent event) throws SQLException {
         String currentdate = LocalDate.now().toString();
         String hour = "'" + currentdate + " " + time.getText() + ":00:00'";
-        try {
-            String url = "jdbc:mysql://localhost:3306/train";
-            Connection con = DriverManager.getConnection(url, "root", "root");
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st
-                    .executeQuery("select train_id, start_station, end_station from ticket where start_time = " + hour);
-            int N = rs.getMetaData().getColumnCount();
-            while (rs.next()) {
-                String s = "";
-                for (int i = 1; i <= N; i++) {
-                    if (i > 1)
-                        s += " - ";
-                    s += rs.getString(i);
-                }
-                destination.getItems().add(s);
+
+        String url = "jdbc:mysql://localhost:3306/train";
+        Connection con = DriverManager.getConnection(url, "root", "root");
+        java.sql.Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("select train_id, start_station, end_station from ticket where start_time = " + hour);
+        int N = rs.getMetaData().getColumnCount();
+        while (rs.next()) {
+            String s = "";
+            for (int i = 1; i <= N; i++) {
+                if (i > 1)
+                    s += " - ";
+                s += rs.getString(i);
             }
-            con.close();
-        } catch (Exception e) {
+            destination.getItems().add(s);
         }
+        con.close();
     }
 
     @FXML
