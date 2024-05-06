@@ -37,7 +37,7 @@ public class bookTicketFramecontrol {
     @FXML
     private ComboBox<String> startStation;
 
-    private String seat_id, ticket_id;
+    private String seat_id, train_id, ticket_id;
 
     public void initialize() throws Exception {
         String url = "jdbc:mysql://localhost:3306/train";
@@ -68,7 +68,7 @@ public class bookTicketFramecontrol {
     @FXML
     void bookE(ActionEvent event) throws Exception {
         query.fun("insert into booked_tickets values(\"" + ticket_id + "\",\"" + variables.curUser + "\")");
-        query.fun("update seat set visited = true where seat_id = " + seat_id);
+        query.fun("update seat set visited = true where train_id = \"" + train_id + "\" AND  seat_id = " + seat_id);
         JOptionPane.showMessageDialog(null, "Ticket booked successfully.");
 
         Stage primaryStage = new Stage();
@@ -146,6 +146,7 @@ public class bookTicketFramecontrol {
                 + "\" AND train_id = \"" + y + "\"");
         while (rs.next()) {
             seat_id = x;
+            train_id = y;
             ticket_id = rs.getString(1);
             info.setText("Expected arrival time: " + rs.getString(3) + "\nTicket cost:" + rs.getString(2));
         }
