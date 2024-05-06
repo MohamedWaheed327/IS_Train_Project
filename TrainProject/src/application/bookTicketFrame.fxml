@@ -15,8 +15,8 @@
             <Image url="file:TrainProject\res\train3.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="destination" layoutX="137.0" layoutY="49.0" onAction="#destinationE" prefHeight="26.0" prefWidth="172.0" promptText="destination" />
-      <ComboBox fx:id="seat" layoutX="137.0" layoutY="245.0" onAction="#seatE" prefHeight="26.0" prefWidth="172.0" promptText="seat" />
+      <ComboBox fx:id="destination" layoutX="133.0" layoutY="47.0" onAction="#destinationE" prefHeight="26.0" prefWidth="172.0" promptText="destination" />
+      <ComboBox fx:id="seat" layoutX="134.0" layoutY="346.0" onAction="#seatE" prefHeight="26.0" prefWidth="172.0" promptText="seat" />
       <Button fx:id="book" layoutX="356.0" layoutY="469.0" mnemonicParsing="false" onAction="#bookE" prefHeight="34.0" prefWidth="74.0" style="-fx-background-color: #006666;" text="Book" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
@@ -25,8 +25,8 @@
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font></Button>
-      <ComboBox fx:id="startStation" layoutX="137.0" layoutY="149.0" onAction="#startStationE" prefHeight="26.0" prefWidth="172.0" promptText="start station" />
-      <ComboBox fx:id="departureTime" layoutX="134.0" layoutY="330.0" onAction="#departureTimeE" prefHeight="26.0" prefWidth="172.0" promptText="Departure time" />
+      <ComboBox fx:id="startStation" layoutX="133.0" layoutY="148.0" onAction="#startStationE" prefHeight="26.0" prefWidth="172.0" promptText="start station" />
+      <ComboBox fx:id="departureTime" layoutX="133.0" layoutY="252.0" onAction="#departureTimeE" prefHeight="26.0" prefWidth="172.0" promptText="Departure time" />
       <Label fx:id="info" layoutX="133.0" layoutY="402.0" prefHeight="26.0" prefWidth="172.0" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="15.0" />
