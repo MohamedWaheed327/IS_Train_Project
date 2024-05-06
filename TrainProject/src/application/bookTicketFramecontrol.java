@@ -1,61 +1,4 @@
-package application;
-
-import functions.*;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
-
-import javax.swing.JOptionPane;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-public class bookTicketFramecontrol {
-
-    @FXML
-    private Button back;
-
-    @FXML
-    private Button book;
-
-    @FXML
-    private ComboBox<String> destination;
-
-    @FXML
-    private Button search;
-
-    @FXML
-    private ComboBox<String> seat;
-
-    @FXML
-    private TextField time;
-
-    @FXML
-    void backE(ActionEvent event) throws IOException {
-        Stage primaryStage = new Stage();
-        clear.fun();
-        variables.openStages.add(primaryStage);
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml")));
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Your Train App");
-        primaryStage.show();
-    }
-
-    @FXML
-    void bookE(ActionEvent event) {
-        JOptionPane.showMessageDialog(null, "Ticket booked successfully.");
-    }
-
-    @FXML
+/*
     void destinationE(ActionEvent event) throws SQLException {
         String id = "";
         int i = 0;
@@ -126,6 +69,89 @@ public class bookTicketFramecontrol {
         System.out.println(visited);
         query.fun("insert into booked_tickets values(" + seat_id + train_id + ",\"" + variables.curUser + "\")");
         query.fun("update seat set visited = true where seat_id = " + seat_id);
+    }
+
+}
+*/
+
+package application;
+
+import functions.*;
+import java.io.IOException;
+import java.sql.*;
+import java.sql.SQLException;
+import java.time.LocalDate;
+
+import javax.swing.JOptionPane;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+public class bookTicketFramecontrol {
+
+    @FXML
+    private Button back;
+
+    @FXML
+    private Button book;
+
+    @FXML
+    private ComboBox<String> departureTime;
+
+    @FXML
+    private ComboBox<String> destination;
+
+    @FXML
+    private Label info;
+
+    @FXML
+    private ComboBox<String> seat;
+
+    @FXML
+    private ComboBox<String> startStation;
+
+    public void initialize() throws SQLException {
+        
+    }
+
+    @FXML
+    void backE(ActionEvent event) throws IOException {
+        Stage primaryStage = new Stage();
+        clear.fun();
+        variables.openStages.add(primaryStage);
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml")));
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Your Train App");
+        primaryStage.show();
+    }
+
+    @FXML
+    void bookE(ActionEvent event) {
+        JOptionPane.showMessageDialog(null, "Ticket booked successfully.");
+    }
+
+    @FXML
+    void departureTimeE(ActionEvent event) {
+
+    }
+
+    @FXML
+    void destinationE(ActionEvent event) {
+
+    }
+
+    @FXML
+    void seatE(ActionEvent event) {
+
+    }
+
+    @FXML
+    void startStationE(ActionEvent event) {
+
     }
 
 }
