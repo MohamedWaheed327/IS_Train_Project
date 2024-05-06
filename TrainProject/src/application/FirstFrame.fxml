@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="532.0" fitWidth="481.0" layoutX="-4.0" pickOnBounds="true">
          <image>
-            <Image url="file:D:\IS_Train_Project\TrainProject\res\train2.jpg" />
+            <Image url="file:TrainProject\res\train2.jpg" />
          </image>
       </ImageView>
       <Label layoutX="51.0" layoutY="77.0" text="Welcome to Your Train App" textFill="#0088ff">

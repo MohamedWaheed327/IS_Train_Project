@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="534.0" fitWidth="457.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true">
          <image>
-            <Image url="file:D:\IS_Train_Project\TrainProject\res\train3.jpg" />
+            <Image url="file:TrainProject\res\train3.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="time" layoutX="60.0" layoutY="83.0" />
