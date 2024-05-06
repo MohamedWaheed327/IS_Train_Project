@@ -1,85 +1,7 @@
-/*
-    void destinationE(ActionEvent event) throws SQLException {
-        String id = "";
-        int i = 0;
-        String d = destination.getValue();
-        while (d.charAt(i) != ' ') {
-            id += d.charAt(i);
-            i++;
-        }
-        String url = "jdbc:mysql://localhost:3306/train";
-        Connection con = DriverManager.getConnection(url, "root", "root");
-        java.sql.Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("select * from seat where train_id = " + id + " and visited = false");
-
-        int N = rs.getMetaData().getColumnCount();
-        while (rs.next()) {
-            String s = "";
-            for (i = 1; i <= N; i++) {
-                if (i > 1)
-                    s += " - ";
-                s += rs.getString(i);
-            }
-            seat.getItems().add(s);
-        }
-        con.close();
-    }
-
-    @FXML
-    void searchE(ActionEvent event) throws SQLException {
-        String currentdate = LocalDate.now().toString();
-        String hour = "'" + currentdate + " " + time.getText() + ":00:00'";
-
-        String url = "jdbc:mysql://localhost:3306/train";
-        Connection con = DriverManager.getConnection(url, "root", "root");
-        java.sql.Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("select train_id, start_station, end_station from ticket where start_time = " + hour);
-        int N = rs.getMetaData().getColumnCount();
-        while (rs.next()) {
-            String s = "";
-            for (int i = 1; i <= N; i++) {
-                if (i > 1)
-                    s += " - ";
-                s += rs.getString(i);
-            }
-            destination.getItems().add(s);
-        }
-        con.close();
-    }
-
-    @FXML
-    void seatE(ActionEvent event) throws Exception {
-        String x = seat.getValue();
-        int i = 0;
-        String seat_id = "", train_id = "", visited = "";
-        while (x.charAt(i) != ' ') {
-            seat_id += x.charAt(i);
-            i++;
-        }
-        i += 3;
-        while (x.charAt(i) != ' ') {
-            train_id += x.charAt(i);
-            i++;
-        }
-        i += 3;
-        while (i < x.length()) {
-            visited += x.charAt(i);
-            i++;
-        }
-        System.out.println(visited);
-        query.fun("insert into booked_tickets values(" + seat_id + train_id + ",\"" + variables.curUser + "\")");
-        query.fun("update seat set visited = true where seat_id = " + seat_id);
-    }
-
-}
-*/
-
 package application;
 
 import functions.*;
-import java.io.IOException;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -115,6 +37,8 @@ public class bookTicketFramecontrol {
     @FXML
     private ComboBox<String> startStation;
 
+    private String seat_id, ticket_id;
+
     public void initialize() throws Exception {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
@@ -142,13 +66,41 @@ public class bookTicketFramecontrol {
     }
 
     @FXML
-    void bookE(ActionEvent event) {
+    void bookE(ActionEvent event) throws Exception {
+        query.fun("insert into booked_tickets values(\"" + ticket_id + "\",\"" + variables.curUser + "\")");
+        query.fun("update seat set visited = true where seat_id = " + seat_id);
         JOptionPane.showMessageDialog(null, "Ticket booked successfully.");
+
+        Stage primaryStage = new Stage();
+        clear.fun();
+        variables.openStages.add(primaryStage);
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("userDashboardFrame.fxml")));
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Your Train App");
+        primaryStage.show();
     }
 
     @FXML
-    void departureTimeE(ActionEvent event) {
+    void departureTimeE(ActionEvent event) throws Exception {
+        String url = "jdbc:mysql://localhost:3306/train";
+        Connection con = DriverManager.getConnection(url, "root", "root");
+        java.sql.Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("select train_id from ticket where start_station = \""
+                + startStation.getValue() + "\" AND end_station = \"" + destination.getValue()
+                + "\" AND start_time = \"" + departureTime.getValue() + "\"");
 
+        Set<String> S = new HashSet<>();
+        while (rs.next()) {
+            S.add(rs.getString(1));
+        }
+
+        for (String str : S) {
+            rs = st.executeQuery("select seat_id from seat where train_id = \"" + str + "\" AND visited = false");
+            while (rs.next()) {
+                seat.getItems().add("#seat:" + rs.getString(1) + "-train:" + str);
+            }
+        }
+        con.close();
     }
 
     @FXML
@@ -156,11 +108,12 @@ public class bookTicketFramecontrol {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         java.sql.Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("select * from train where end_station = \"" + destination.getValue() + "\"");
+        ResultSet rs = st.executeQuery(
+                "select start_station from ticket where end_station = \"" + destination.getValue() + "\"");
 
         Set<String> S = new HashSet<>();
         while (rs.next()) {
-            S.add(rs.getString(3));
+            S.add(rs.getString(1));
         }
         for (String str : S) {
             startStation.getItems().add(str);
@@ -170,22 +123,33 @@ public class bookTicketFramecontrol {
 
     @FXML
     void seatE(ActionEvent event) throws Exception {
+        String x = "", y = ""; // seat, train
+        boolean ok = true;
+        int i = 6;
+        while (i < seat.getValue().length()) {
+            if (seat.getValue().charAt(i) == '-') {
+                i += 7;
+                ok = false;
+            }
+            if (ok) {
+                x += seat.getValue().charAt(i);
+            } else {
+                y += seat.getValue().charAt(i);
+            }
+            i++;
+        }
+
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         java.sql.Statement st = con.createStatement();
-        ResultSet rs = st
-                .executeQuery("select start_time from ticket where start_station = \"" + startStation.getValue()
-                        + "\" AND " + "end_station = \"" + destination.getValue() + "\"");
-
-        Set<String> S = new HashSet<>();
+        ResultSet rs = st.executeQuery("select ticket_id, cost, expected_end_time from ticket where seat_id = \"" + x
+                + "\" AND train_id = \"" + y + "\"");
         while (rs.next()) {
-            S.add(rs.getString(1));
-        }
-        for (String str : S) {
-            departureTime.getItems().add(str);
+            seat_id = x;
+            ticket_id = rs.getString(1);
+            info.setText("Expected arrival time: " + rs.getString(3) + "\nTicket cost:" + rs.getString(2));
         }
         con.close();
-
     }
 
     @FXML
@@ -193,8 +157,8 @@ public class bookTicketFramecontrol {
         String url = "jdbc:mysql://localhost:3306/train";
         Connection con = DriverManager.getConnection(url, "root", "root");
         java.sql.Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("select start_time from ticket where start_station = \"" + startStation.getValue()
-                + "\" AND " + "end_station = \"" + destination.getValue() + "\"");
+        ResultSet rs = st.executeQuery("select start_time from ticket where start_station = \""
+                + startStation.getValue() + "\" AND " + "end_station = \"" + destination.getValue() + "\"");
 
         Set<String> S = new HashSet<>();
         while (rs.next()) {

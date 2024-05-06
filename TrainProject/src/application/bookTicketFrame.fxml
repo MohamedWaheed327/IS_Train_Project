@@ -27,7 +27,7 @@
          </font></Button>
       <ComboBox fx:id="startStation" layoutX="133.0" layoutY="148.0" onAction="#startStationE" prefHeight="26.0" prefWidth="172.0" promptText="start station" />
       <ComboBox fx:id="departureTime" layoutX="133.0" layoutY="252.0" onAction="#departureTimeE" prefHeight="26.0" prefWidth="172.0" promptText="Departure time" />
-      <Label fx:id="info" layoutX="133.0" layoutY="402.0" prefHeight="26.0" prefWidth="172.0" textFill="WHITE">
+      <Label fx:id="info" layoutX="133.0" layoutY="402.0" prefHeight="62.0" prefWidth="306.0" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font>

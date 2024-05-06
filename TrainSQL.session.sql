@@ -40,6 +40,6 @@
 -- );
 
 -- CREATE TABLE booked_tickets(
---     ticket_id int not null references ticket(ticket_id),
---     user_name_ int not null references user_db(user_name_)
+--     ticket_id VARCHAR(100) not null references ticket(ticket_id),
+--     user_name_ VARCHAR(100) not null references user_db(user_name_)
 -- );
