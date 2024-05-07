@@ -9,7 +9,6 @@
             "name": "App",
             "request": "launch",
             "mainClass": "application.App",
-            "projectName": "IS_Train_Project_1f29a1c6",
             "vmArgs": "--module-path \"TrainProject/lib/javafx-sdk-21.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
