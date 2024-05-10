@@ -17,11 +17,10 @@ public class add_train {
         int N = Integer.valueOf(seats_number);
 
         train_id = train_id + ",";
-        seats_number = seats_number + ",";
         start_station = "\"" + start_station + "\",";
         end_station = "\"" + end_station + "\",";
-        query.fun("insert into train values(" + train_id + seats_number + start_station + end_station + seats_number
-                + "0" + ")");
+        query.fun("insert into train values(" + train_id + seats_number + "," + start_station + end_station + "0,"
+                + seats_number + ")");
 
         for (int i = 1; i <= N; i++) {
             query.fun("insert into seat values(" + Integer.toString(i) + "," + train_id + "false" + ")");

@@ -69,6 +69,8 @@ public class bookTicketFramecontrol {
     void bookE(ActionEvent event) throws Exception {
         query.fun("insert into booked_tickets values(\"" + ticket_id + "\",\"" + variables.curUser + "\")");
         query.fun("update seat set visited = true where train_id = \"" + train_id + "\" AND  seat_id = " + seat_id);
+        query.fun("update train set occupied_seats = occupied_seats + 1 where train_id = \"" + train_id + "\"");
+        query.fun("update train set remaining_seats = remaining_seats - 1 where train_id = \"" + train_id + "\"");
         JOptionPane.showMessageDialog(null, "Ticket booked successfully.");
 
         Stage primaryStage = new Stage();
