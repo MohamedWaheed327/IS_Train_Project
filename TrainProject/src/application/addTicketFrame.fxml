@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="498.0" fitWidth="379.0" layoutY="-8.0" pickOnBounds="true">
          <image>
-            <Image url="file:D:\IS_Train_Project\TrainProject\res\train2.jpg" />
+            <Image url="file:TrainProject\res\train2.jpg" />
          </image>
       </ImageView>
       <ComboBox fx:id="choose" layoutX="36.0" layoutY="60.0" onAction="#chooseE" prefHeight="26.0" prefWidth="306.0" promptText="choose train" />
